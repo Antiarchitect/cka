@@ -24,4 +24,8 @@ fc-cache -f -v
 
 add-apt-repository ppa:kelleyk/emacs -y
 apt update -y
-apt install emacs25 -y
+apt install emacs26 -y
+
+echo "Running emacs..."
+
+su -c 'emacs' "${user}"
