@@ -1,4 +1,9 @@
 #!/bin/bash
+if [ -z "${1}" ]; then
+    echo "Please provide current username..."
+fi
+
+
 user="${1}"
 
 echo "${user}"
