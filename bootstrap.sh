@@ -1,5 +1,5 @@
 #!/bin/bash
-user=$USER
+user="${1}"
 
 echo "${user}"
 
