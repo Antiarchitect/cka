@@ -17,6 +17,8 @@ fonts_dir="/usr/share/fonts/truetype/SourceCodePro"
 rm -rf "${fonts_dir}"
 mkdir -p "${fonts_dir}"
 curl -s -L https://github.com/adobe-fonts/source-code-pro/archive/2.030R-ro/1.050R-it.tar.gz | tar -xzv --directory "${fonts_dir}"
+rm -rf /var/lib/dpkg/lock
+dpkg --configure -a
 apt install fontconfig -y
 fc-cache -f -v
 
