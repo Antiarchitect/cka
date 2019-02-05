@@ -15,7 +15,7 @@ su -c 'ln -s ~/.dotfiles/.spacemacs ~/.spacemacs' "${user}"
 
 fonts_dir="/usr/share/fonts/truetype"
 mkdir -p "${fonts_dir}"
-curl https://github.com/adobe-fonts/source-code-pro/archive/2.030R-ro/1.050R-it.tar.gz | tar -xzv --directory "${fonts_dir}/SourceCodePro"
+curl -s -L https://github.com/adobe-fonts/source-code-pro/archive/2.030R-ro/1.050R-it.tar.gz | tar -xzv --directory "${fonts_dir}/SourceCodePro"
 apt install fontconfig -y
 fc-cache -f -v
 
