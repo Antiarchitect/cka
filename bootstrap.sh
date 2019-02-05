@@ -26,6 +26,4 @@ add-apt-repository ppa:kelleyk/emacs -y
 apt update -y
 apt install emacs26 -y
 
-echo "Running emacs..."
-
-su -c 'emacs' "${user}"
+su -c 'echo "EDITOR=emacs" >> ~/.bashrc' "${user}"
