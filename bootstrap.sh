@@ -1,8 +1,11 @@
 #!/bin/bash
+user=$USER
 
-git clone --branch develop https://github.com/syl20bnr/spacemacs ~/.emacs.d
-git clone https://github.com/Antiarchitect/.dotfiles ~/.dotfiles
-ln -s ~/.dotfiles/.spacemacs ~/.spacemacs
-sudo -i add-apt-repository ppa:kelleyk/emacs
-sudo -i apt update
-sudo -i apt install emacs25
+echo "${user}"
+
+su -c 'git clone --branch develop https://github.com/syl20bnr/spacemacs ~/.emacs.d "${user}"'
+su -c 'git clone https://github.com/Antiarchitect/.dotfiles ~/.dotfiles "${user}"'
+su -c 'ln -s ~/.dotfiles/.spacemacs ~/.spacemacs "${user}"'
+add-apt-repository ppa:kelleyk/emacs
+apt update
+apt install emacs25
