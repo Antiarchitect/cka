@@ -24,6 +24,7 @@ fc-cache -f -v
 
 add-apt-repository ppa:kelleyk/emacs -y
 apt update -y
+apt install xinit -y
 apt install emacs26 -y
 
 su -c 'echo "EDITOR=emacs" >> ~/.bashrc' "${user}"
