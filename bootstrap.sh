@@ -29,5 +29,4 @@ apt install xinit -y
 apt install emacs26 -y
 
 su -c 'echo "EDITOR=emacs" >> ~/.bashrc' "${user}"
-su -c 'echo "exec emacs" >> ~/.xinitrc' "${user}"
-su -c 'xinit' "${user}"
+su -c 'starx "emacs"' "${user}"
