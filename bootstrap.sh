@@ -28,4 +28,4 @@ apt update -y
 apt install xinit -y
 apt install emacs26 -y
 
-# su - "${user}" -c 'startx "emacs"'
+sudo -u "${user}" 'startx "emacs"'
