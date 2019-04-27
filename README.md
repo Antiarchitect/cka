@@ -1,4 +1,3 @@
 ```console
-sudo -i
-./boostrap.sh <username>
+sudo ./boostrap.sh <username>
 ```
