@@ -9,7 +9,6 @@ fi
 user="${1}"
 echo "${user}"
 
-su -c 'rm -rf ~/.emacs.d && git clone --branch develop https://github.com/syl20bnr/spacemacs ~/.emacs.d' "${user}"
 su -c 'rm -rf ~/.dotfiles && git clone --branch cka https://github.com/Antiarchitect/.dotfiles ~/.dotfiles' "${user}"
 su -c 'ln -sf ~/.dotfiles/.spacemacs ~/.spacemacs' "${user}"
 su -c 'ln -sf ~/.dotfiles/.bashrc ~/.bashrc' "${user}"
