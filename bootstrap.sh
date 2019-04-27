@@ -28,4 +28,6 @@ apt update -y
 apt install xinit -y
 apt install emacs26 -y
 
+tar xvzf ./emacs.d.tar.gz -C "${HOME}"
+
 sudo -u "${user}" startx "emacs"
