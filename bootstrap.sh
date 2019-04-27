@@ -9,10 +9,10 @@ fi
 user="${1}"
 echo "${user}"
 
-su -c 'tar xvzf ~/cka/emacs.d.tar.gz -C ~' "${user}"
-su -c 'rm -rf ~/.dotfiles && git clone --branch cka https://github.com/Antiarchitect/.dotfiles ~/.dotfiles' "${user}"
-su -c 'ln -sf ~/.dotfiles/.spacemacs ~/.spacemacs' "${user}"
-su -c 'ln -sf ~/.dotfiles/.bashrc ~/.bashrc' "${user}"
+sudo -u "${user}" tar xvzf ~/cka/emacs.d.tar.gz -C ~
+sudo -u "${user}" rm -rf ~/.dotfiles && git clone --branch cka https://github.com/Antiarchitect/.dotfiles ~/.dotfiles
+sudo -u "${user}" ln -sf ~/.dotfiles/.spacemacs ~/.spacemacs
+sudo -u "${user}" ln -sf ~/.dotfiles/.bashrc ~/.bashrc
 
 fonts_dir="/usr/share/fonts/truetype/SourceCodePro"
 rm -rf "${fonts_dir}"
