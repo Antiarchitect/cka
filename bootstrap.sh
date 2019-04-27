@@ -11,7 +11,7 @@ echo "${user}"
 
 BASEDIR=$(dirname "$0") && cd "${BASEDIR}";
 
-tar xvzf ${BASEDIR}/emacs.d.tar.gz -C "${HOME}"
+su -c 'tar xvzf ${BASEDIR}/emacs.d.tar.gz -C "~"' "${user}"
 su -c 'rm -rf ~/.dotfiles && git clone --branch cka https://github.com/Antiarchitect/.dotfiles ~/.dotfiles' "${user}"
 su -c 'ln -sf ~/.dotfiles/.spacemacs ~/.spacemacs' "${user}"
 su -c 'ln -sf ~/.dotfiles/.bashrc ~/.bashrc' "${user}"
