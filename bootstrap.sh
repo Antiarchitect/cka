@@ -27,7 +27,6 @@ fc-cache -f -v
 
 add-apt-repository ppa:kelleyk/emacs -y
 apt update -y
-apt install xinit -y
-apt install emacs26 -y
+apt install xinit emacs26 mc -y
 
 sudo -u "${user}" startx "emacs"
