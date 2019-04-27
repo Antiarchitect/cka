@@ -14,6 +14,7 @@ sudo -u "${user}" rm -rf ~/.dotfiles && git clone --branch cka https://github.co
 sudo -u "${user}" ln -sf ~/.dotfiles/.spacemacs ~/.spacemacs
 sudo -u "${user}" ln -sf ~/.dotfiles/.bashrc ~/.bashrc
 
+# Adobe fonts
 fonts_dir="/usr/share/fonts/truetype/SourceCodePro"
 rm -rf "${fonts_dir}"
 mkdir -p "${fonts_dir}"
@@ -23,8 +24,17 @@ dpkg --configure -a
 apt install fontconfig -y
 fc-cache -f -v
 
+# Emacs and xinit
 add-apt-repository ppa:kelleyk/emacs -y
 apt update -y
-apt install xinit emacs26 mc -y
+apt install wget xinit emacs26 mc -y
+
+# cfssl
+wget -q --show-progress --https-only --timestamping \
+  https://pkg.cfssl.org/R1.2/cfssl_linux-amd64 \
+  https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64
+chmod +x cfssl_linux-amd64 cfssljson_linux-amd64
+mv cfssl_linux-amd64 /usr/local/bin/cfssl
+mv cfssljson_linux-amd64 /usr/local/bin/cfssljson
 
 sudo -u "${user}" startx "emacs"
