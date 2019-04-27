@@ -1,4 +1,4 @@
 ```console
-sudo su -i
+sudo -i
 ./boostrap.sh
 ```
